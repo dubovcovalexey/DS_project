@@ -1,6 +1,6 @@
 # Интеллектуальная рекомендательная система Olist со скорингом
 
-Рекомендательная система построена на бразильском датасете Olist Ecommerce. Включает 5 честных моделей: Alibaba Swing, Content-Based, Score Fusion, Two-Tower (PyTorch) и CatBoostRanker.
+Рекомендательная система построена на бразильском датасете Olist Ecommerce. Включает 5 моделей: Alibaba Swing, Content-Based, Score Fusion, Two-Tower (PyTorch) и CatBoostRanker.
 
 ## Запуск проекта через Docker
 
