@@ -1,19 +1,19 @@
-# Интеллектуальная рекомендательная система Olist со скорингом
+# Olist Intelligent Recommendation System with Scoring
 
-Рекомендательная система построена на бразильском датасете Olist Ecommerce. Включает 5 моделей: Alibaba Swing, Content-Based, Score Fusion, Two-Tower (PyTorch) и CatBoostRanker.
+The recommendation system is built on the Brazilian Olist E-commerce dataset. It features 5 models: Alibaba Swing, Content-Based, Score Fusion, Two-Tower (PyTorch), and CatBoostRanker.
 
-## Запуск проекта через Docker
+## Running the Project via Docker
 
-Чтобы запустить приложение в изолированном контейнере, выполните в терминале папки проекта следующие команды:
+To run the application in an isolated container, execute the following commands in your project terminal folder:
 
-1. **Сборка Docker-образа:**
+1. **Build the Docker image:**
 ```bash
 docker build -t olist-rec-app .
 ```
 
-2. **Запуск Docker-контейнера:**
+2. **Run the Docker container:**
 ```bash
 docker run -p 8501:8501 olist-rec-app
 ```
 
-После старта контейнера откройте браузер по адресу: `http://localhost:8501`
+Once the container starts, open your browser and navigate to: `http://localhost:8501`
