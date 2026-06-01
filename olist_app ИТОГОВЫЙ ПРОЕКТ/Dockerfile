@@ -1,23 +1,23 @@
-# Берем официальный легкий образ Python, оптимизированный под Linux
+# Use the official lightweight Python image optimized for Linux
 FROM python:3.11-slim
 
-# Указываем рабочую директорию внутри контейнера
+# Set the working directory inside the container
 WORKDIR /app
 
-# Устанавливаем системные зависимости для корректной работы CatBoost в Linux
+# Install system dependencies required for proper CatBoost operation on Linux
 RUN apt-get update && apt-get install -y --no-install-recommends \
     libgomp1 \
     && rm -rf /var/lib/apt/lists/*
 
-# Копируем файл зависимостей и устанавливаем их
+# Copy the dependency file and install packages
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Копируем все остальные файлы проекта (код, кэш данных и веса моделей)
+# Copy all remaining project files (code, data cache, and model weights)
 COPY . .
 
-# Открываем порт, который Streamlit использует по умолчанию
+# Expose the port that Streamlit uses by default
 EXPOSE 8501
 
-# Инструкция для запуска веб-интерфейса при старте контейнера
+# Command to launch the web interface when the container starts
 CMD ["streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0.0"]
